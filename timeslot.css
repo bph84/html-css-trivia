@@ -1,0 +1,23 @@
+body {
+    font: 14px sans-serif;
+}
+
+table {
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody tr {
+    background: #d4d4d4;
+}
+
+tr th:first-child, tr td:first-child {
+    width: 50px;
+    white-space: nowrap;
+}
+
+tbody tr:nth-child(odd) {
+    background: #eee;
+}
