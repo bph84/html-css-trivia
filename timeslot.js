@@ -3,7 +3,7 @@
 
 function duplicateAndTemplate(templateElement, data) {
     var newElement = templateElement.cloneNode(true);
-    
+
     newElement.removeAttribute("id");
     newElement.removeAttribute("style");
     newElement.removeAttribute("hidden");
@@ -22,7 +22,7 @@ function duplicateAndTemplate(templateElement, data) {
 
         for (const elem of templatedElements) {
             const key = elem.getAttribute('data-tmpl');
-            elem.innerHTML = d[key];
+            elem.innerHTML = d[key] ?? '';
             elem.removeAttribute('data-tmpl');
         }
 

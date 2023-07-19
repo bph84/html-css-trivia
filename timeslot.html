@@ -32,27 +32,18 @@
 
         <tbody>
 
-            <tr>
-                <td class="time">9:00</td>
+            <tr id="row-template">
+                <td class="time" data-tmpl="time">9:00</td>
+                <td data-tmpl="demo"></td>
                 <td></td>
-                <td></td>
-                <td></td>
+                <td> Fixed value </td>
                 <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
             </tr>
 
-            <tr id="row-template">
-                <td class="time" data-tmpl="time">10:00</td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
+            
 
 
         </tbody>
@@ -68,7 +59,9 @@
 
     function populateRows () {
         const data = [
-            {time: '11:00'},
+        {time: '10:00', demo: 'demo data in a cell'},
+
+            {time: '11:00', demo: 'demo data in a cell'},
             {time: '12:00'},
             {time: '13:00'},
             {time: '14:00'},
