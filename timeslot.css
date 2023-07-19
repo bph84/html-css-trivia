@@ -21,3 +21,15 @@ tr th:first-child, tr td:first-child {
 tbody tr:nth-child(odd) {
     background: #eee;
 }
+
+td.selected {
+    background: #6eb2ff;
+}
+
+td.available {
+    background: #6eff95;
+}
+
+td.unavailable {
+    background: #9c2929;
+}
