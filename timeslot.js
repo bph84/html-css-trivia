@@ -42,3 +42,35 @@ function duplicateAndTemplate(templateElement, data) {
     return retrn;
 }
 
+
+function expandColumnToAllRows(tableBody, columnIndex) {
+    
+    const rows = tableBody.querySelectorAll('tr:not(:first-child)');
+
+    for (const row of rows) {
+        const td = row.querySelectorAll('td')[columnIndex];
+        td.parentNode.removeChild(td);
+    }
+
+    const columnCell = tableBody.querySelectorAll('tr:first-child td')[columnIndex];
+    columnCell.setAttribute('rowspan', rows.length + 1);
+    columnCell.innerHTML = '<div class="inACell"> test teste testest estse ts oijsdfoij sodifjoi oisdjfoij sodifjoij oijoij </div>';
+    columnCell.classList.add('singleCellColumn');
+
+    columnCell.style.display = 'none';
+   // window.setTimeout(() => {
+        columnCell.style.display = 'table-cell';
+ //   }, 1);
+
+/*
+    for (const row of rows) {
+        const column = row.querySelectorAll('td')[columnIndex];
+        column.innerHTML = columnValues.join(', ');
+    }
+    */
+}
+
+
+setTimeout(() => {
+    expandColumnToAllRows(document.querySelector('tbody'), 2);
+}, 200);
