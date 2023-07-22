@@ -49,18 +49,19 @@ function expandColumnToAllRows(tableBody, columnIndex) {
 
     for (const row of rows) {
         const td = row.querySelectorAll('td')[columnIndex];
-        td.parentNode.removeChild(td);
+        td.remove();
+        //td.parentNode.removeChild(td);
     }
 
     const columnCell = tableBody.querySelectorAll('tr:first-child td')[columnIndex];
     columnCell.setAttribute('rowspan', rows.length + 1);
-    columnCell.innerHTML = '<div class="inACell"> test teste testest estse ts oijsdfoij sodifjoi oisdjfoij sodifjoij oijoij </div>';
+    columnCell.innerHTML = '<div class="inACell"> Test </div>';
     columnCell.classList.add('singleCellColumn');
 
     columnCell.style.display = 'none';
-   // window.setTimeout(() => {
+    window.setTimeout(() => {
         columnCell.style.display = 'table-cell';
- //   }, 1);
+    }, 200); // This is required to fix the bug!
 
 /*
     for (const row of rows) {
